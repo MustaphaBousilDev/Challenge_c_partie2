@@ -1,23 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 int main(){
-  char a[10]={};
-  char b[10]={};
+
+  char a[100];
+  char b[100];
   int count=0;
   int n;
-  printf("Enter Number Character in table:");
-  scanf("%d",&n);
 
-  for(int i=0;i<n;i++){
-    scanf("%s",&a[i]);
-    }
-  for(int i=0;i<n;i++){
-    scanf("%s",&b[i]);
-    }
-
+  scanf("%[^\n]%*c",a);
+  scanf("%[^\n]%*c",b);
   if(strlen(a)==strlen(b)){
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+    for(int i=0;i<strlen(a);i++){
+         for(int j=0;j<strlen(a);j++){
             if(b[j]=='*'){
                 continue;
             }else{
@@ -26,11 +20,11 @@ int main(){
                    b[j]='*';
                 }
             }
-        }
-    }
+          }
+     }
   }
 
-  if(count==n){
+  if(count==strlen(a)){
     printf("Yess Bitchh");
   }else{
     printf("Noo Bitchhh");
