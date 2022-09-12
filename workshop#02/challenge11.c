@@ -2,21 +2,19 @@
 #include <stdbool.h>
 
 void  is_leap_year(int year){
-   bool a=true,b=false;
-   if(year %4==0 ){
-     if(year%400==0){
-        if(year%100==0){
-
-        }
-     }else{
-
-     }
+   bool x;
+   if((year % 4 ==0 && year % 100 !=0) || year %400==0){
+       x=true;
+   }else{
+       x=false;
    }
+   printf(x ? "True" : "False");
 }
 
 int main(){
  int year;
- prinf("Enter Year:");
- scanf("%d",year);
+ printf("Enter Year:");
+ scanf("%d",&year);
+ is_leap_year(year);
  return 0;
 }

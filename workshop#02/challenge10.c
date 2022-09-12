@@ -3,7 +3,6 @@
 
 int divededby(int n,int a){
   int d;
-  bool t=true, f=false;
   int s=0;
   d=n/a;
   return d;
@@ -11,6 +10,7 @@ int divededby(int n,int a){
 
 }
 void divdebey(int n , int a){
+  bool x;
   int d=divededby(n,a);
   //printf("%d",d);
   if(d==1 || d==2){
@@ -19,16 +19,16 @@ void divdebey(int n , int a){
     for(int i=1;i<=d;i++){
     if(i!=1  && i!=d){
         if(d%2==0 || (d%3==0 && d!=3) || (d%5==0 && d!=5)){
-            printf("False");
+            x=false;
             break;
         }else{
-            printf("True");
+            x=true;
             break;
         }
       }
     }
   }
-
+  printf(x ? "True" : "False");
 }
 int main(){
     int n,a;
@@ -36,8 +36,5 @@ int main(){
     scanf("%d",&n);
     scanf("%d",&a);
     divdebey(n,a);
-
-
-
  return 0;
  }
