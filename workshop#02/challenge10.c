@@ -1,10 +1,19 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void divededby(int *n,int *a){
+int divededby(int *n,int *a,int *d){
   bool t=true, f=false;
-  int s=0,d;
-  d=*n/(*a);
+  int s=0;
+  *d=*n/(*a);
+  return *d;
+
+
+}
+void divdebey(int *n , int *a){
+  bool t=true, f=false;
+
+  int d=divededby(&n,&a,&d);
+
   if(d==1 || d==2){
     printf("True");
   }else{
@@ -20,12 +29,15 @@ void divededby(int *n,int *a){
       }
     }
   }
+
 }
 int main(){
     int n,a;
+    bool x;
     scanf("%d",&n);
     scanf("%d",&a);
-    divededby(&n,&a);
+    divdebey(&n,&a);
+
 
 
  return 0;
